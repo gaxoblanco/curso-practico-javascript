@@ -132,3 +132,53 @@ function calcularModa(lista3){
     const moda = lista3Array[lista3Array.length -1];
     return moda;
 }
+
+
+// [(N1*C1) + (N2*C2) + (N3*C3)]
+//  --------------------------   dividido
+//      (c1 + c2 + c3)          N= note  //  C= Credit
+
+//desafio .. Promedio Ponderado.
+function SacarPromedioPonderado(Lista4){
+ const lista4 = [
+     {
+         materia: "Matematicas", nota: 4, credit: 8,
+     },
+     {
+        materia: "Plastica", nota: 10, credit: 3,
+    },
+    {
+        materia: "Educacion Fisica", nota: 9, credit: 4,
+    },
+    {
+        materia: "Algebra", nota: 2, credit: 10,
+    },
+ ];
+
+
+ const NotAndCredit = lista4.map(function (noteObject){
+     return noteObject.nota * noteObject.credit;
+ })
+
+const sumaNotaAndCredit = NotAndCredit.reduce(
+    function (suma = 0, newVal){
+        return suma + newVal
+    }
+);
+
+const credits = lista4.map(function(notetObjet){
+        return notetObjet.credit;
+    }
+);
+const sumaCredits = credits.reduce(
+    function (sum = 0, newVal){
+        return sum + newVal;
+    }
+)
+
+const promedioPonderado = sumaNotaAndCredit / sumaCredits;
+
+
+
+    return promedioPonderado
+}
