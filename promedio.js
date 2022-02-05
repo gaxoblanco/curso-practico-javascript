@@ -37,6 +37,27 @@ const promedioLista = sumaLista / lista.length;
 return promedioLista;
 }
 
+
+//agrego funcion para conectar con el HTML
+listaAritmetica = [500, 250, 650, 750];
+
+function ButtonAgregarAritmetica(){
+    var inputAritmetica = document.getElementById ("InputListaAritmetica");
+    var nuevoAritmetica = inputAritmetica.value;
+
+    var listaAritmetica = listaAritmetica + nuevoAritmetica;
+   // alert(nuevoAritmetica)
+    return listaAritmetica;
+};
+
+   
+function ButtonCalcularAritmetica(){
+    listaAritmetica = [500, 250, 650, 750];
+    const aritmetica = calcularMediaAritmetica(listaAritmetica);
+    resultP.innerText = "La Aritmetica de esta lista es: " + aritmetica;
+};
+
+
 /// termina promedio aritmetica 
 
 
@@ -49,7 +70,7 @@ const lista2 = [
     5000000,
 ];
 
-const mitadLista2 = lista2.length / 2;
+const mitadLista2 = parseInt(lista2.length / 2);
 
 function esPar(numerito){
 //esto dice que si al divdir NO tiene decimales es un numero par. => 6/2 = 3 (tres es un numero entero,) 5/2 = 2.5 (2.5 es con decimales)
@@ -61,11 +82,23 @@ function esPar(numerito){
 }
 //primero que nada tenemos que saber si la lista es par o inpar, si es para el centro de la lista son 2 elementos que se suman y dividen a la mitadLista2
 
-if (lista2 es par?){
-    //necesutamos dos elementos
-    // -> el promedio
-    // -> mediana
+
+let mediana; // resultado
+
+if (esPar(lista2.length)){
+    const elemento1 = lista2[mitadLista2 - 1];//necesutamos dos elementos
+    const elemento2 = lista2[mitadLista2];
+    
+    const promedioElemento1y2 = calcularMediaAritmetica([ //llamo la primer funcion, para sacar la aritmetica
+        elemento1,
+        elemento2,
+    ]);
+    
+    mediana =promedioElemento1y2; // -> mediana
+
+// --------> el promedio
 
 }else{
-    //posicion mitadLista2 dentro lista2.
+   mediana = lista2[mitadLista2]; //posicion mitadLista2 dentro lista2. -- guardo la media en media
 }
+
