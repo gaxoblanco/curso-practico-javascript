@@ -4,7 +4,7 @@
     --Black: #000000;
     --very-light-pink: #C7c7c7;
     --text-input-field: #f7f7f7;
-    --hospital-green: #ACD9B2;
+    --hospital-green: #bffad4;
     --sm: 14px;
     --md: 16px;
     --lg: 18px;
@@ -12,6 +12,9 @@
 body{
 margin: 0;
 font-family: 'Quicksand', sans-serif;
+background-color: #bffad4;
+background-image: linear-gradient(45deg, #bffad4 0%, #fcf6ae 100%);
+
 }
 
 .containter{
@@ -25,7 +28,7 @@ font-family: 'Quicksand', sans-serif;
     display:grid;
     grid-template-rows: auto 1fr auto;
     width: 430px;
-    background: rgb(219, 223, 219);
+    background: #dfddba;
     border-radius: 15px;
 }
 
