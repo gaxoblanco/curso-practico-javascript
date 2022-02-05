@@ -59,7 +59,11 @@ const lista2 = [
     400,
     5000000,
 ];
-lista2.sort();
+lista2.sort(
+    function (valorAcumulado, nuevoValor){
+        valorAcumulado - nuevoValor
+    });
+
 const mitadLista2 = parseInt(lista2.length / 2);
 
 function esPar(numerito){
@@ -94,5 +98,37 @@ function calcularMediana(lista2){
        mediana = lista2[mitadLista2]; //posicion mitadLista2 dentro lista2. -- guardo la media en media
     }
     return mediana;
-}
+};
 
+
+
+
+
+
+
+
+
+// ------- Calcular la moda 
+function calcularModa(lista3){
+    //objeto
+    const lista3Count = {};
+
+    lista3.map(
+        function(elemento){
+            if(lista3Count[elemento]){
+                lista3Count[elemento] += 1;
+            }else{
+                lista3Count[elemento] = 1;
+            }
+        }
+    );
+    //convierte el objeto que creamos en array
+    const lista3Array = Object.entries(lista3Count).sort(
+        function (elementoA, elementoB){
+            return elementoA[1] - elementoB[1];
+        }
+    )
+
+    const moda = lista3Array[lista3Array.length -1];
+    return moda;
+}
